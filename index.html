@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>element_ui</title>
+
+    <!-- import CSS -->
+    <link rel="stylesheet" href="element_ui/lib/theme-chalk/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- ボタン表示 -->
+      <el-button @click="visible = true" type="success">Button</el-button>
+
+      <!-- ダイアログ表示 -->
+      <el-dialog :visible.sync="visible" title="Hello world">
+        <p>Try Element</p>
+      </el-dialog>
+    </div>
+  </body>
+
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+
+  <!-- import JavaScript -->
+  <script src="element_ui/lib/index.js"></script>
+  <!-- import japanese languages -->
+  <script src="./element_ui/lib/umd/locale/ja.js"></script>
+
+  <script>
+    ELEMENT.locale(ELEMENT.lang.ja);
+    new Vue({
+      el: "#app",
+      data: function () {
+        return { visible: false };
+      },
+    });
+  </script>
+</html>
